@@ -1,4 +1,4 @@
-# robotics_specialization
+# Coursera Robotics Specialization
 Coursera Robotics Specialization Homework
 
 *** SPOILER ALERT! ***
