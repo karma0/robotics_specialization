@@ -98,18 +98,20 @@ while true
     % and parent tables appropriately.
     actions = {[-1, 0], [1, 0], [0, -1], [0, 1]};
     for k=1:length(actions)
-        a = actions{k};
-        n_i = i+a(1);
-        n_j = j+a(2);
+        act = actions{k};
+        ni = i+act(1);
+        nj = j+act(2);
+
         % check for bounds
-        if n_i < 1 || n_j < 1 || n_i > size(map, 1) || n_j > size(map, 2)
+        if ni < 1 || nj < 1 || ni > size(map, 1) || nj > size(map, 2)
             continue;
         end
+
         % check if cell is free cell or goal cell
-        if map(n_i, n_j) == 1 || map(n_i, n_j) == 6
-            map(n_i, n_j) = 3;
-            distanceFromStart(n_i, n_j) = min_dist + 1;
-            parent(n_i, n_j) = current;
+        if map(ni, nj) == 1 || map(ni, nj) == 6
+            map(ni, nj) = 3;
+            distanceFromStart(ni, nj) = min_dist + 1;
+            parent(ni, nj) = current;
         end
     end
     numExpanded = numExpanded + 1;
